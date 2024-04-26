@@ -34,7 +34,7 @@ class Kombat:
             self._enemy_player = self.second_player
             return
 
-        if second_player_total_commands > first_player_total_commands:
+        if second_player_total_commands < first_player_total_commands:
             self._active_player = self.second_player
             self._enemy_player = self.first_player
             return
