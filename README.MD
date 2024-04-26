@@ -1,5 +1,7 @@
 # Talana Kombat Challenge
 
+[Instrucciones del desafio](https://github.com/esteban03/TalanaKombat/blob/main/talana_instructions/Desafio%20TalanaKombat%20%20-%20Software%20Support%20Developer.docx.pdf)
+
 ### Instrucciones de ejecución
 Se dispone de un contenedor y un archivo docker-compose para facilitar la revisión.
 
