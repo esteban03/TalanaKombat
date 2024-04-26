@@ -35,7 +35,7 @@ class Player:
 
         self._life -= amount
 
-    def no_moves_remaining(self) -> bool:
+    def no_commands_remaining(self) -> bool:
         if len(self._commands["movimientos"]) == 0 or len(self._commands["golpes"]) == 0:
             return True
 

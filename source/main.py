@@ -76,7 +76,7 @@ class Kombat:
         while not self.gameover():
             player = self.get_active_player()
 
-            if player.no_moves_remaining():
+            if player.no_commands_remaining():
                 break
 
             action = player.attack(enemy=self.get_enemy_player())
