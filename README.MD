@@ -3,7 +3,7 @@
 ### Instrucciones de ejecución
 Se dispone de un contenedor y un archivo docker-compose para facilitar la revisión.
 
-* Ejecuta el comando `docker-compose up` en la raíz del proyecto. Esto ejecutará la app utilizando el archivo en `./data/commands.json` como comandos e imprimirá la narración del juego en la salida del comando.
+* Ejecuta el comando `docker-compose up` en la raíz del proyecto. Esto ejecutará la app utilizando el archivo en `./data/commands.json` e imprimirá la narración del juego en la salida.
 * El contenedor está montado con un volumen. Esto permite que puedas modificar o reemplazar el archivo **.json** manteniendo el mismo nombre para realizar tus pruebas.
 
 ### Instrucciones para desarrollo
@@ -25,4 +25,4 @@ Se han agregado algunos tests automatizados con **pytest**.
 * **Active Player**: Jugador o personaje en turno (puede atacar).
 * **Enemy player**: Lo contrario al jugador activo. Solo puede recibir ataques.
 * **Controls**: Movimientos (abajo, arriba, atrás, adelante) y golpes.
-* **Action**: Movimiento, golpe o especial realizado por un jugador enemigo.
+* **Action**: Movimiento, golpe o especial realizado por un jugador a un enemigo.
