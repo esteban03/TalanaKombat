@@ -1,21 +1,18 @@
+import json
+
 from source.main import Kombat
 from source.players import TonynStallone, ArnaldorShuatseneguer
 
-# necesitamos un datamanager
-data = {
-    "player1": {
-        "movimientos": ["D", "DSD", "S", "DSD", "SD"],
-        "golpes": ["K", "P", "", "K", "P"]
-    },
-    "player2": {
-        "movimientos": ["SA", "SA", "SA", "ASA", "SA"],
-        "golpes": ["K", "", "K", "P", "P"]
-    }
-}
+def reader(file: str, path="./data/") -> dict:
+    with open(path + file) as file:
+        data = json.load(file)
+
+    return data
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+
+    data = reader(file="commands.json")
 
     first_player = TonynStallone(commands=data["player1"])
     second_player = ArnaldorShuatseneguer(commands=data["player2"])
@@ -26,5 +23,3 @@ if __name__ == '__main__':
     )
 
     game.start()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
