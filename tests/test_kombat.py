@@ -3,9 +3,17 @@ import pytest
 from source.main import Kombat
 from source import players
 
-def test_kombat():
-    print("ok")
-    assert True
+def test_kombat_winner(commands):
+    tony_commands, arnold_commands = commands["player1"], commands["player2"]
+
+    tony = players.TonynStallone(commands=tony_commands)
+    arnold = players.ArnaldorShuatseneguer(commands=arnold_commands)
+
+    game = Kombat(first_player=tony, second_player=arnold)
+    game.start()
+
+    assert not tony.alive()
+    assert arnold.alive()
 
 
 def test_turn_change_logic(commands):
