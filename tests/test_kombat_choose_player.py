@@ -96,5 +96,5 @@ def test_choose_starting_player_logic_and_second_player_start(commands, active_e
 
     game._choose_starting_player()
 
-    assert isinstance(game.get_active_player(), active_expected)
-    assert isinstance(game.get_enemy_player(), enemy_expected)
+    assert isinstance(game._get_active_player(), active_expected)
+    assert isinstance(game._get_enemy_player(), enemy_expected)

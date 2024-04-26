@@ -73,18 +73,18 @@ class Kombat:
         self._choose_starting_player()
         narrator = Narrator(first_player=self.first_player, second_player=self.second_player)
 
-        while not self.gameover():
-            player = self.get_active_player()
+        while not self._gameover():
+            player = self._get_active_player()
 
             if player.no_commands_remaining():
                 break
 
-            action = player.attack(enemy=self.get_enemy_player())
+            action = player.attack(enemy=self._get_enemy_player())
 
             narration = narrator.narrate_action(action=action, active_player=self._active_player)
             print(narration)
 
-            self.next_turn()
+            self._next_turn()
 
         print("")
         print("*" * 30)
@@ -94,16 +94,16 @@ class Kombat:
         print("Finaliza el juego")
         print("*" * 30)
 
-    def gameover(self) -> bool:
+    def _gameover(self) -> bool:
         return not self.first_player.alive() or not self.second_player.alive()
 
-    def get_active_player(self) -> Player:
+    def _get_active_player(self) -> Player:
         return self._active_player
 
-    def get_enemy_player(self) -> Player:
+    def _get_enemy_player(self) -> Player:
         return self._enemy_player
 
-    def next_turn(self) -> None:
+    def _next_turn(self) -> None:
         self._active_player, self._enemy_player = self._enemy_player, self._active_player
 
 

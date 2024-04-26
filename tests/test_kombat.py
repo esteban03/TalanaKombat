@@ -26,13 +26,13 @@ def test_turn_change_logic(commands):
     game._active_player = tony
     game._enemy_player = arnold
 
-    assert game.get_active_player() is tony
-    assert game.get_enemy_player() is arnold
+    assert game._get_active_player() is tony
+    assert game._get_enemy_player() is arnold
 
-    game.next_turn()
+    game._next_turn()
 
-    assert game.get_active_player() is arnold
-    assert game.get_enemy_player() is tony
+    assert game._get_active_player() is arnold
+    assert game._get_enemy_player() is tony
 
 
 @pytest.mark.parametrize("tony_life, arnold_life, result_expected", [
@@ -52,7 +52,7 @@ def test_gameover_logic(commands, tony_life, arnold_life, result_expected):
 
     game = Kombat(first_player=tony, second_player=arnold)
 
-    assert game.gameover() == result_expected
+    assert game._gameover() == result_expected
 
 
 
