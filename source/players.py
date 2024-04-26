@@ -26,11 +26,20 @@ class Player:
     def get_commands(self) -> dict:
         return self._commands.copy()
 
+    def get_health(self) -> int:
+        return self._life
+
     def _make_damage(self, amount: int) -> None:
         if (self._life - amount) < 0:
             self._life = 0
 
         self._life -= amount
+
+    def no_moves_remaining(self) -> bool:
+        if len(self._commands["movimientos"]) == 0 or len(self._commands["golpes"]) == 0:
+            return True
+
+        return False
 
     def _get_effects_to_attack(self) -> tuple[int, str, str]:
         movements, hit = self.next_command()

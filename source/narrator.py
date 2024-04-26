@@ -30,12 +30,8 @@ class Narrator:
 
             return narration.rstrip(",")
 
-
-    def narrate_current_situation(self) -> str:
-        if self.first_player.alive() and self.second_player.alive():
-            return "El combate aun no finaliza!!"
-
-        if self.first_player.alive():
-            return f"{self.first_player.get_name()} vence a {self.second_player.get_name()}"
-
-        return f"{self.second_player.get_name()} vence a {self.first_player.get_name()}"
+    def summarize(self) -> str:
+        summary = "Resumen del combate:\n"
+        summary += f"{self.first_player.get_name()} - Salud: {self.first_player.get_health()} puntos\n"
+        summary += f"{self.second_player.get_name()} - Salud: {self.second_player.get_health()} puntos\n"
+        return summary

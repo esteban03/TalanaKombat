@@ -76,6 +76,9 @@ class Kombat:
         while not self.gameover():
             player = self.get_active_player()
 
+            if player.no_moves_remaining():
+                break
+
             action = player.attack(enemy=self.get_enemy_player())
 
             narration = narrator.narrate_action(action=action, active_player=self._active_player)
@@ -83,9 +86,10 @@ class Kombat:
 
             self.next_turn()
 
-        print("Resultado: " + narrator.narrate_current_situation())
-
         print("")
+        print("*" * 30)
+        print(narrator.summarize())
+
         print("*" * 30)
         print("Finaliza el juego")
         print("*" * 30)
