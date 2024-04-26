@@ -2,6 +2,13 @@ from source.players import Player
 
 
 class Narrator:
+    _moves = {
+        "W": "arriba",
+        "S": "la izquierda",
+        "A": "abajo",
+        "D": "la derecha",
+    }
+
     def __init__(self, first_player: Player, second_player: Player):
         self.first_player = first_player
         self.second_player = second_player
@@ -13,20 +20,11 @@ class Narrator:
         if action["kind"] in ("hit", "special"):
             return f"{active_player.get_name()} golpea con un {action['name'].lower()} a {enemy.get_name()}"
 
-
         if action["kind"] == "movement":
-            moves = {
-                "W": "arriba",
-                "S": "la izquierda",
-                "A": "abajo",
-                "D": "la derecha",
-            }
-
             narration = f"{active_player.get_name()} se mueve hacia "
             for index, move in enumerate(action["name"], start=1):
-                movement = moves.get(move)
+                movement = self._moves.get(move)
                 narration += f"{movement} y " if (len(action["name"]) - 1) == index else f"{movement},"
-
 
             return narration.rstrip(",")
 
