@@ -1,7 +1,7 @@
 from contextlib import suppress
 
-from .narrator import Narrator
-from .players import Player
+from source.narrator import Narrator
+from source.players import Player
 
 
 class Kombat:

@@ -32,7 +32,7 @@ class Player:
 
         self._life -= amount
 
-    def _get_effects_to_attack(self,) -> tuple[int, str, str]:
+    def _get_effects_to_attack(self) -> tuple[int, str, str]:
         movements, hit = self.next_command()
 
         if (special := self._specials.get(movements + hit)) is not None:
