@@ -28,3 +28,22 @@ Se han agregado algunos tests automatizados con **pytest**.
 * **Enemy player**: Lo contrario al jugador activo. Solo puede recibir ataques.
 * **Controls**: Movimientos (abajo, arriba, atrás, adelante) y golpes.
 * **Action**: Movimiento, golpe o especial realizado por un jugador a un enemigo.
+
+
+### Preguntas
+
+1. Supongamos que en un repositorio GIT hiciste un commit y olvidaste un archivo. Explica cómo se soluciona si hiciste push, y cómo si aún no hiciste.
+
+    **Re**: Depende. Si aún no he hecho el push, puedo añadir el archivo al commit anterior con ``git  commit --amend --no-edit``. También podría realizar otro commit para el archivo dependiendo del caso. Si hice el push y tengo un pull request, puedo hacer --amend y reescribir con un push --force. Si necesito deshacer muchos cambios locales para ordenar la historia, puedo considerar git reset. Lo importante es que el historial de commit llegue en orden a las ramas principales. La respuesta va a depender mucho de la situación.
+2. Si has trabajado con control de versiones ¿Cuáles han sido los flujos con los que has trabajado?
+
+    **Re**: Gitflow, GitHub Flow y flujos personalizados pensados para CI/CD. En mi último trabajo, usábamos una estrategia personalizada con ramas como master, develop, feature, fix y Chore.
+3. ¿Cuál ha sido la situación más compleja que has tenido con esto?
+
+   **Re**: En general, no he tenido muchos problemas. Tal vez Gitflow tiene demasiadas ramas y puede ser complejo gestionarlas para mantener un orden en el proyecto. Además, los flujos que se basan en el trabajo desde una rama develop en vez de master hacen que, en muchos casos, estés trabajando con código que no es idéntico al de producción, lo que puede generar algunos problemas. Pero todo esto se puede solucionar con prácticas auxiliares o eligiendo un flujo diferente para el proyecto, como por ejemplo el trunk-based development. Hay mucho de que hablar sobre esto.
+4. ¿Qué experiencia has tenido con los microservicios?
+
+    **Re**: He construido algunos microservicios para simplificar el control sobre ciertos dominios de proyectos y mejorar el versionado. También he trabajado con arquitecturas híbridas (Monolito - Microservicios).
+5. ¿Cuál es tu servicio favorito de GCP o AWS? ¿Por qué?
+
+   **Re**: En algún momento preferí AWS por tener mejor documentación, mejores precios en algunos servicios y una integración sólida entre sus servicios, además de contar con DynamoDB que es muy útil para escalar aplicaciones. Actualmente estoy estudiando AWS porque las compañías lo prefieren en mi opinión. Pero la comparación entre ambos servicios es difícil, creo que depende mucho del proyecto. 
